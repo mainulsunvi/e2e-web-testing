@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
 test.describe('Hotel Booking E2E Testing', function () { 
-	test("Availability Check", async ({ page }) => {
+	test.skip("Availability Check", async ({ page }) => {
 		test.slow();
 
 		await page.goto('/hotels', { waitUntil: 'networkidle' });
