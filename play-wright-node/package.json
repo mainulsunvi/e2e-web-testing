@@ -7,5 +7,8 @@
     "@playwright/test": "^1.44.1",
     "@types/node": "^20.14.7"
   },
-  "scripts": {}
+  "scripts": {},
+  "dependencies": {
+    "playwright": "^1.45.0"
+  }
 }
