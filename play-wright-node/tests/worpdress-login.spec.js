@@ -21,8 +21,7 @@ test.describe('WordPress Login', () => {
 
 			await expect(page.locator('.tf-setting-top-bar')).toBeVisible();
 		});
-		await page.pause()
-		await test.step('Disable Post Types', async () => {
+		await test.step('Disable Apartment Post Types', async () => {
 			await page.locator('#general label').filter({ hasText: /^Apartment$/ }).click();
 			await page.getByRole('button', { name: 'Save' }).click();
 			await page.locator('div').filter({ hasText: 'Options saved successfully!' }).isVisible();
