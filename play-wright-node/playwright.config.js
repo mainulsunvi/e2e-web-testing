@@ -8,7 +8,7 @@ module.exports = defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: process.env.CI ? 'dot' : 'list',
+  reporter: 'html',
   use: {
     baseURL: 'http://localhost:10039',
     trace: 'on-first-retry',

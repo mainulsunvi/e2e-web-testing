@@ -2,8 +2,10 @@ const { test, expect } = require('@playwright/test');
 
 test.describe('Tourfic Settings', () => {
 	test("General Setting", async ({ page, baseURL }) => {
-		await page.goto('/wp-admin/admin.php?page=tf_settings#tab=general');
-		await expect(page.locator('.tf-setting-top-bar')).toBeVisible();
+		await test.step('Navigating to Tourfic General Settings', async () => {
+			await page.goto('/wp-admin/admin.php?page=tf_settings#tab=general');
+			await expect(page.locator('.tf-setting-top-bar')).toBeVisible();
+		});
 
 		if( await page.locator('#general label').filter({ hasText: /^Apartment$/ }).isChecked() == false ) {
 			await test.step('Disable Apartment Post Types', async () => {
