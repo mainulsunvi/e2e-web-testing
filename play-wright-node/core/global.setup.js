@@ -3,7 +3,7 @@ import playwrightConfig from '../playwright.config';
 
 async function globalSetup() {
     const baseURL = playwrightConfig.use.baseURL;
-    const browser = await chromium.launch({ headless: false });
+    const browser = await chromium.launch({ headless: true });
     const context = await browser.newContext();
     const page = await context.newPage();
 
