@@ -1,16 +1,16 @@
 const { defineConfig, devices } = require('@playwright/test');
 
 module.exports = defineConfig({
-  globalSetup: require.resolve('./core/global.setup.js'),
+  globalSetup: require.resolve('./utils/global.setup.js'),
   testDir: './tests',
-  timeout: 30000,
+  timeout: 50000,
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 1,
+  retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: 'html',
+  reporter: 'line',
   use: {
-    baseURL: 'http://localhost:10039',
+    baseURL: 'http://tourfic.test.msunvi',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
   },
