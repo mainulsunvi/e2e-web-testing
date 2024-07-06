@@ -2,6 +2,7 @@ const { test, expect } = require('@playwright/test');
 
 test.describe('Tourfic Settings', () => {
 	test.skip();
+	test.use({ storageState: { cookies: [], origins: [] } });
 	test.beforeEach("General Setting", async ({ page, baseURL }) => {
 		await test.step('Navigating to Tourfic General Settings', async () => {
 			await page.goto('/wp-admin/admin.php?page=tf_settings#tab=general');
@@ -37,4 +38,5 @@ test.describe('Tourfic Settings', () => {
 			}
 		});
 	});
- });
+});
+ 
