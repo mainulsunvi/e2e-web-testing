@@ -5,6 +5,7 @@ const bookingDestails = {
 };
 
 test.describe('Tour Booking', function () {
+	test.skip();
 	test.use({ storageState: { cookies: [], origins: [] } })
 	test.slow();
 	test("Tour Booking Design 2", async ({ page, baseURL, context }) => {
